@@ -81,11 +81,14 @@ return packer.startup(function(use)
 
   -- LaTeX
   use { "lervag/vimtex", opt = true, ft = "tex" }
-  use { "donRaphaco/neotex", opt = true, ft = "tex"}
 
   -- Tree
-  use { "ms-jpq/chadtree", run = "python3 -m chadtree deps", branch = "chad", opt = true, cmd = "CHADopen" }
-
+  use {
+  'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+}
   -- Autopairs (Auto closes brackets)
   use {
   	"windwp/nvim-autopairs",
