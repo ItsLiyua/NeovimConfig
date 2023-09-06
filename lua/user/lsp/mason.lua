@@ -1,4 +1,3 @@
-
 local servers = {
   "lua_ls",
 	"pyright",
@@ -6,6 +5,7 @@ local servers = {
   "java_language_server",
   "kotlin_language_server",
   "yamlls",
+  "ltex",
 }
 
 local settings = {

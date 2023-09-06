@@ -44,8 +44,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions usebbby lots of plugins
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
- 
+
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
+
   -- Colorschemes
   use "lunarvim/onedarker"
   use "lunarvim/colorschemes"
@@ -59,7 +60,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-      
+
   -- Snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
@@ -68,8 +69,28 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+  use "jose-elias-alvarez/null-ls.nvim" -- LSP diagnostics and code actions
 
+  -- Telescope
+  use { "nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"} }
+  use "nvim-telescope/telescope-media-files.nvim"
+
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "p00f/nvim-ts-rainbow"
+
+  -- LaTeX
+  use { "lervag/vimtex", opt = true, ft = "tex" }
+  use { "donRaphaco/neotex", opt = true, ft = "tex"}
+
+  -- Tree
+  use { "ms-jpq/chadtree", run = "python3 -m chadtree deps", branch = "chad", opt = true, cmd = "CHADopen" }
+
+  -- Autopairs (Auto closes brackets)
+  use {
+  	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
