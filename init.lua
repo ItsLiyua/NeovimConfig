@@ -10,4 +10,4 @@ require "user.autopairs"
 require "user.comments"
 require "user.gitsigns"
 require "user.nvimtree"
-
+require "user.bufferline"

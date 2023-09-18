@@ -44,5 +44,9 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+vim.cmd [[set iskeyword+=ö]]
+vim.cmd [[set iskeyword+=ä]]
+vim.cmd [[set iskeyword+=ü]]
+vim.cmd [[set iskeyword+=ß]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
